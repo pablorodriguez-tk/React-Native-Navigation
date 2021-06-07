@@ -8,7 +8,7 @@ export const Page2Screen = () => {
 
   useEffect(() => {
     navigation.setOptions({title: 'Hola Mundo', headerBackTitle: 'Go Back'});
-  }, []);
+  }, [navigation]);
 
   return (
     <View style={styles.globalMargin}>
