@@ -1,12 +1,21 @@
-import React from 'react';
-import {Button, Text, View} from 'react-native';
-import {StackScreenProps} from '@react-navigation/stack';
+import React, {useEffect} from 'react';
+import {Button, Text, View, TouchableOpacity} from 'react-native';
+// import {StackScreenProps} from '@react-navigation/stack';
 import {styles} from '../theme/appTheme';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {DrawerScreenProps} from '@react-navigation/drawer';
 
-interface Props extends StackScreenProps<any, any> {}
+// interface Props extends StackScreenProps<any, any> {}
+interface Props extends DrawerScreenProps<any, any> {}
 
 export const Page1Screen = ({navigation}: Props) => {
+  useEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => (
+        <Button title="Menu" onPress={() => navigation.toggleDrawer()} />
+      ),
+    });
+  }, []);
+
   return (
     <View style={styles.globalMargin}>
       <Text style={styles.title}>Page1Screen</Text>
@@ -15,7 +24,9 @@ export const Page1Screen = ({navigation}: Props) => {
         onPress={() => navigation.navigate('Page2Screen')}
       />
 
-      <Text>Navigate with arguments</Text>
+      <Text style={{marginVertical: 20, fontSize: 20}}>
+        Navigate with arguments
+      </Text>
 
       <View style={{flexDirection: 'row'}}>
         <TouchableOpacity
