@@ -17,12 +17,23 @@ export const Page1Screen = ({navigation}: Props) => {
 
       <Text>Navigate with arguments</Text>
 
-      <TouchableOpacity
-        onPress={() =>
-          navigation.navigate('PagePersona', {id: 1, name: 'Pedro'})
-        }>
-        <Text>Pedro</Text>
-      </TouchableOpacity>
+      <View style={{flexDirection: 'row'}}>
+        <TouchableOpacity
+          style={{...styles.BigButton, backgroundColor: '#5856D6'}}
+          onPress={() =>
+            navigation.navigate('PersonScreen', {id: 1, name: 'Pedro'})
+          }>
+          <Text style={styles.BigButtonText}>Pedro</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={{...styles.BigButton, backgroundColor: '#FF9427'}}
+          onPress={() =>
+            navigation.navigate('PersonScreen', {id: 2, name: 'Maria'})
+          }>
+          <Text style={styles.BigButtonText}>Maria</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
