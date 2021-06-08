@@ -2,12 +2,12 @@ import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Tab1Screen} from '../screens/Tab1Screen';
-import {Tab2Screen} from '../screens/Tab2Screen';
 import {StackNavigator} from './StackNavigator';
 import {colors} from '../theme/appTheme';
 import {Platform, Text} from 'react-native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {TopTabNavigator} from './TopTabNavigator';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const Tabs = () => {
   return Platform.OS === 'ios' ? (
@@ -29,18 +29,18 @@ const TabsNavigatorAndroid = () => {
           let iconName: string = '';
           switch (route.name) {
             case 'Tab1Screen':
-              iconName = 'T1';
+              iconName = 'bandage-outline';
               break;
 
             case 'Tab2Screen':
-              iconName = 'T2';
+              iconName = 'basketball-outline';
               break;
 
             case 'StackNavigator':
-              iconName = 'ST';
+              iconName = 'bookmarks-outline';
               break;
           }
-          return <Text style={{color}}>{iconName}</Text>;
+          return <Icon name={iconName} size={20} color={color} />;
         },
       })}>
       <BottomTabAndroid.Screen
@@ -86,18 +86,18 @@ const TabsNavigatorIOS = () => {
           let iconName: string = '';
           switch (route.name) {
             case 'Tab1Screen':
-              iconName = 'T1';
+              iconName = 'bandage-outline';
               break;
 
             case 'Tab2Screen':
-              iconName = 'T2';
+              iconName = 'basketball-outline';
               break;
 
             case 'StackNavigator':
-              iconName = 'ST';
+              iconName = 'bookmarks-outline';
               break;
           }
-          return <Text style={{color}}>{iconName}</Text>;
+          return <Icon name={iconName} size={20} color={color} />;
         },
       })}>
       {/* <Tab.Screen
