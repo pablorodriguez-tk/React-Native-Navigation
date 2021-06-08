@@ -15,7 +15,7 @@ import {
   Text,
 } from 'react-native';
 import {styles} from '../theme/appTheme';
-import {TabsNavigator} from './TabsNavigator';
+import {Tabs} from './TabsNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -26,7 +26,7 @@ export const DrawerNavigator2 = () => {
     <Drawer.Navigator
       drawerType={width >= 768 ? 'permanent' : 'front'}
       drawerContent={props => <InternalMenu {...props} />}>
-      <Drawer.Screen name="TabsNavigator" component={TabsNavigator} />
+      <Drawer.Screen name="TabsNavigator" component={Tabs} />
       <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
     </Drawer.Navigator>
   );
