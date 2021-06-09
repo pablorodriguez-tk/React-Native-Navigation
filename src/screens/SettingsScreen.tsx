@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Text, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {Icon} from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {AuthContext} from '../context/AuthContext';
 import {colors, styles} from '../theme/appTheme';
 
